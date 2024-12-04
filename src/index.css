@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "JetBrains Mono", Consolas, Monaco, monospace;
+  }
+
+  * {
+    font-family: "JetBrains Mono", Consolas, Monaco, monospace !important;
+  }
+}
+
+/* Ensure monospace is used everywhere */
+body {
+  font-family: "JetBrains Mono", Consolas, Monaco, monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optional: Adjust letter spacing for better readability */
+.font-mono {
+  letter-spacing: -0.025em;
+}
+
+:root {
+  --background-light: #ffffff;
+  --background-dark: #111827;
+  --text-light: #1f2937;
+  --text-dark: #f3f4f6;
+}
+
+body {
+  @apply transition-colors duration-200;
+}
+
+body.light {
+  @apply bg-gray-50;
+  color: var(--text-light);
+}
+
+body.dark {
+  @apply bg-gray-900;
+  color: var(--text-dark);
+}
+
+.dark-mode-toggle {
+  @apply fixed top-4 right-4 z-50;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Add your styles here */
+.app {
+  min-height: 100vh;
+}
+
+.app.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+section {
+  min-height: 100vh;
+  padding: 2rem;
+  scroll-margin-top: 4rem;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.dark nav {
+  background: #2a2a2a;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Add more styles as needed */
+
+.nav-link {
+  @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200;
+}
+
+.mobile-nav-link {
+  @apply block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
